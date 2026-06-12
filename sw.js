@@ -7,12 +7,11 @@ const STATIC_CACHE = 'static-v1';
 
 // Core files to pre-cache (app shell)
 const APP_SHELL = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png',
-  '/icons/apple-touch-icon.png'
+  '/Informasi-Jemaat/',
+  '/Informasi-Jemaat/index.html',
+  '/Informasi-Jemaat/manifest.json',
+  '/Informasi-Jemaat/icons/icon-192.png',
+  '/Informasi-Jemaat/icons/icon-512.png',
 ];
 
 // External CDN resources to cache on first use
