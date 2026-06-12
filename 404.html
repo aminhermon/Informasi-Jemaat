@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Jemaat</title>
+  <!-- GitHub Pages SPA redirect: redirect all 404s back to index.html -->
+  <script>
+    // Store the path and redirect to root so the app can handle routing
+    const path = window.location.pathname;
+    const search = window.location.search;
+    sessionStorage.setItem('pwa-redirect', path + search);
+    window.location.replace('/');
+  </script>
+</head>
+<body>
+  <p style="font-family:sans-serif;text-align:center;margin-top:40px;color:#666">
+    Memuat App Jemaat...
+  </p>
+</body>
+</html>
