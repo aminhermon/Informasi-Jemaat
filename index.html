@@ -1514,13 +1514,6 @@ tbody tr.selected { background: var(--info-light) !important; }
     <button class="nav-item" onclick="showSection('atestasi')">
       <i class="fas fa-exchange-alt"></i><span>Atestasi</span>
     </button>
-    <div class="nav-section-label">SINKRONISASI</div>
-    <button class="nav-item admin-only" onclick="showModal('excelModal')">
-      <i class="fas fa-file-excel" style="color:#1d7045;"></i><span>Ekspor / Impor Excel</span>
-    </button>
-    <button class="nav-item admin-only" onclick="showModal('gsheetModal')" id="navGsheet">
-      <i class="fas fa-table" style="color:#0f9d58;"></i><span>Google Spreadsheet</span>
-    </button>
   </nav>
   <div class="sidebar-footer">
     <!-- Current user info -->
@@ -1838,7 +1831,7 @@ tbody tr.selected { background: var(--info-light) !important; }
                 <label>Komisi</label>
                 <select class="select-styled" id="f_komisi">
                   <option value="">-- Pilih Komisi --</option>
-                  <option>Kaum Bapak</option><option>Kaum Ibu</option>
+                  <option>Kaum Bapak</option><option>Kaum Perempuan</option>
                   <option>Pemuda</option><option>Pelayanan Anak</option>
                 </select>
               </div>
@@ -1903,7 +1896,7 @@ tbody tr.selected { background: var(--info-light) !important; }
           </select>
           <select class="filter-btn select-styled" id="filterKomisi" onchange="filterTable()" style="padding:7px 32px 7px 14px;">
             <option value="">Semua Komisi</option>
-            <option>Kaum Bapak</option><option>Kaum Ibu</option>
+            <option>Kaum Bapak</option><option>Kaum Perempuan</option>
             <option>Pemuda</option><option>Pelayanan Anak</option>
           </select>
           <button class="btn btn-primary btn-sm admin-only" onclick="showSection('input-data')">
@@ -2126,7 +2119,7 @@ tbody tr.selected { background: var(--info-light) !important; }
     <section class="section" id="section-komisi">
       <div class="stats-grid">
         <div class="stat-card blue"><div class="stat-label">Kaum Bapak</div><div class="stat-value" id="kom_kb">0</div><i class="fas fa-male stat-icon"></i></div>
-        <div class="stat-card gold"><div class="stat-label">Kaum Ibu</div><div class="stat-value" id="kom_ki">0</div><i class="fas fa-female stat-icon"></i></div>
+        <div class="stat-card gold"><div class="stat-label">Kaum Perempuan</div><div class="stat-value" id="kom_ki">0</div><i class="fas fa-female stat-icon"></i></div>
         <div class="stat-card green"><div class="stat-label">Pemuda</div><div class="stat-value" id="kom_pm">0</div><i class="fas fa-user-graduate stat-icon"></i></div>
         <div class="stat-card red"><div class="stat-label">Pelayanan Anak</div><div class="stat-value" id="kom_pa">0</div><i class="fas fa-child stat-icon"></i></div>
       </div>
@@ -2135,7 +2128,7 @@ tbody tr.selected { background: var(--info-light) !important; }
         <div class="chart-sub">Klik komisi untuk melihat daftar anggota</div>
         <div class="form-grid" style="margin-top:16px;">
           <button class="btn btn-outline" onclick="filterByKomisi('Kaum Bapak')">Kaum Bapak</button>
-          <button class="btn btn-outline" onclick="filterByKomisi('Kaum Ibu')">Kaum Ibu</button>
+          <button class="btn btn-outline" onclick="filterByKomisi('Kaum Perempuan')">Kaum Perempuan</button>
           <button class="btn btn-outline" onclick="filterByKomisi('Pemuda')">Pemuda</button>
           <button class="btn btn-outline" onclick="filterByKomisi('Pelayanan Anak')">Pelayanan Anak</button>
         </div>
@@ -2656,7 +2649,7 @@ Versi 1.0 Enterprise Edition | Developed by IT Ministry Team
             <label>Komisi</label>
             <select class="select-styled" id="edit_komisi">
               <option value="">-- Pilih --</option>
-              <option>Kaum Bapak</option><option>Kaum Ibu</option>
+              <option>Kaum Bapak</option><option>Kaum Perempuan</option>
               <option>Pemuda</option><option>Pelayanan Anak</option>
             </select>
           </div>
@@ -3087,7 +3080,7 @@ function seedData() {
   if (VIEWER_AUTO_CONFIG.webAppUrl || (gsheetConfig.connected && gsheetConfig.webAppUrl)) return;
   _seedingInProgress = true; // matikan auto-sync selama seeding
   const sektors = ['Maranatha','Berkat','Imanuel','Sion','Yordan'];
-  const komisii = ['Kaum Bapak','Kaum Ibu','Pemuda','Pelayanan Anak'];
+  const komisii = ['Kaum Bapak','Kaum Perempuan','Pemuda','Pelayanan Anak'];
   const firstNames = ['Abraham','Debora','Yusuf','Maria','Petrus','Hana','Samuel','Ruth','Daud','Ester','Paulus','Naomi','Timotius','Rahel','Yohanes','Priskila','Daniel','Dina','Elias','Sara','Stefanus','Tabita','Lukas','Lea','Markus','Miriam','Nikodemus','Siti','Obadya','Talita'];
   const lastNames = ['Sirait','Situmorang','Manullang','Napitupulu','Simanjuntak','Hutabarat','Lumban Tobing','Saragih','Panggabean','Sinaga','Nasution','Tarigan','Sembiring','Ginting','Barus','Karo-Karo'];
   const pernikahanArr = ['Lajang','Menikah','Menikah','Menikah','Duda','Janda'];
@@ -3436,7 +3429,7 @@ function renderGenderChart() {
 }
 
 function renderKomisiChart() {
-  const komisii = ['Kaum Bapak','Kaum Ibu','Pemuda','Pelayanan Anak'];
+  const komisii = ['Kaum Bapak','Kaum Perempuan','Pemuda','Pelayanan Anak'];
   const data = komisii.map(k => countByField(db.jemaat,'komisi',k));
   destroyChart('komisi');
   const ctx = document.getElementById('chartKomisi').getContext('2d');
@@ -4204,7 +4197,7 @@ function updateSektorStats() {
 }
 function updateKomisiStats() {
   document.getElementById('kom_kb').textContent = countByField(db.jemaat,'komisi','Kaum Bapak');
-  document.getElementById('kom_ki').textContent = countByField(db.jemaat,'komisi','Kaum Ibu');
+  document.getElementById('kom_ki').textContent = countByField(db.jemaat,'komisi','Kaum Perempuan');
   document.getElementById('kom_pm').textContent = countByField(db.jemaat,'komisi','Pemuda');
   document.getElementById('kom_pa').textContent = countByField(db.jemaat,'komisi','Pelayanan Anak');
 }
