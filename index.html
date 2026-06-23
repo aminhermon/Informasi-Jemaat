@@ -45,7 +45,7 @@
   --accent-light: #e8c97a;
   --accent-dark: #a07c30;
   --surface: rgb(250, 250, 210, 0.1);
-  --surface-2: #ffffff;
+  --surface-2: rgb(240, 248, 255);
   --surface-3: #f0ede6;
   --border: #dcd8d0;
   --border-light: #ede9e2;
@@ -230,11 +230,11 @@ body {
   text-align: center; margin-top: 14px; font-size: 12px; color: var(--text-muted);
 }
 .login-link {
-  color: var(--primary); font-weight: 600; cursor: pointer;
+  color: #ffffff; font-weight: 600; cursor: pointer;
   background: none; border: none; font-family: inherit; font-size: 12px;
   text-decoration: underline; transition: color 0.15s;
 }
-.login-link:hover { color: var(--primary-light); }
+.login-link:hover { color: #ffffff; }
 
 .login-role-badge {
   display: inline-flex; align-items: center; gap: 5px;
@@ -373,7 +373,7 @@ body.role-viewer .viewer-banner    { display: flex !important; }
 
 .viewer-autologin-btn {
   width: 100%; padding: 11px 16px;
-  background: var(--success-light);
+  background: #FFFAF0;
   color: var(--success);
   border: 1.5px solid #a0d8b8;
   border-radius: var(--radius);
@@ -383,7 +383,7 @@ body.role-viewer .viewer-banner    { display: flex !important; }
 }
 .viewer-autologin-btn:hover {
   background: #c8f0de;
-  border-color: var(--success);
+  border-color: #FAEBD7; color: #FFFFFF;
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(29,107,79,0.2);
 }
