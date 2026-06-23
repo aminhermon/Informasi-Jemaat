@@ -44,13 +44,13 @@
   --accent: #c9a84c;
   --accent-light: #e8c97a;
   --accent-dark: #a07c30;
-  --surface: #e1dccd;
+  --surface: rgb(250, 250, 210, 0.1);
   --surface-2: #ffffff;
   --surface-3: #f0ede6;
   --border: #dcd8d0;
   --border-light: #ede9e2;
   --text-primary: #1a1714;
-  --text-secondary: #5c5449;
+  --text-secondary: #FFFAF0;
   --text-muted: #9a8f82;
   --danger: #b83232;
   --danger-light: #fdeaea;
@@ -119,8 +119,8 @@ body {
 
 .login-card {
   position: relative; z-index: 1;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(1px);
   border-radius: 24px;
   width: 100%; max-width: 420px;
   box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.25);
@@ -133,7 +133,7 @@ body {
 }
 
 .login-header {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  background: rgba(25, 25, 112,0.5);
   padding: 32px 32px 28px;
   text-align: center;
   position: relative; overflow: hidden;
