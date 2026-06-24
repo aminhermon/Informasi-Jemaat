@@ -187,7 +187,7 @@ body {
   outline: none;
 }
 .login-field input:focus {
-  border-color: #FF00FF;
+  border-color: #fada0c;
   box-shadow: 0 0 0 3px rgba(30,58,95,0.12);
   background: var(--surface-2);
 }
@@ -208,14 +208,14 @@ body {
 
 .login-btn {
   width: 100%; padding: 13px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  background: #0000CD;
   color: #fff; border: none; border-radius: var(--radius);
   font-family: inherit; font-size: 14px; font-weight: 700;
   cursor: pointer; transition: all 0.2s; margin-top: 8px;
   display: flex; align-items: center; justify-content: center; gap: 8px;
   box-shadow: 0 4px 14px rgba(30,58,95,0.35);
 }
-.login-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(30,58,95,0.4); }
+.login-btn:hover { background: #191970; }
 .login-btn:active { transform: none; }
 .login-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 .login-btn.loading .btn-text { display: none; }
@@ -373,7 +373,7 @@ body.role-viewer .viewer-banner    { display: flex !important; }
 
 .viewer-autologin-btn {
   width: 100%; padding: 11px 16px;
-  background: #F0F8FF;
+  background: #F5F5F5;
   color: #00008B;
   border: 1.5px solid #FF00FF;
   border-radius: var(--radius);
@@ -382,7 +382,7 @@ body.role-viewer .viewer-banner    { display: flex !important; }
   display: flex; align-items: center; justify-content: center; gap: 8px;
 }
 .viewer-autologin-btn:hover {
-  background: #E6E6FA;
+  background: #F5F5F5;
   border-color: #FF00FF; color: #00008B;
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(29,107,79,0.2);
@@ -1358,8 +1358,8 @@ tbody tr.selected { background: var(--info-light) !important; }
       <div class="login-panel active" id="panel-login">
 
         <!-- STATUS GAS — berubah sesuai konfigurasi -->
-        <div id="gasStatusBadge" style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--radius);margin-bottom:16px;font-size:12px;background:var(--info-light);border:1px solid #b5d4f4;color:var(--info);">
-          <span id="gasStatusDot" style="width:8px;height:8px;border-radius:50%;background:var(--info);flex-shrink:0;"></span>
+        <div id="gasStatusBadge" style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--radius);margin-bottom:16px;font-size:12px;background:rgb(255, 255, 255, 0);color:rgb(255, 255, 255);">
+          <span id="gasStatusDot" style="width:8px;height:8px;border-radius:50%;background:#FF0000;flex-shrink:0;"></span>
           <span id="gasStatusText">Menghubungi server...</span>
         </div>
 
@@ -4751,9 +4751,9 @@ function _checkGasStatus() {
     .then(r => r.json())
     .then(data => {
       _gasOnline = true;
-      if (dot)  { dot.style.background = 'var(--success)'; }
+      if (dot)  { dot.style.background = '#7CFC00'; }
       if (txt)  txt.textContent = 'Server terhubung — siap login';
-      if (badge) badge.style.cssText = 'display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--radius);margin-bottom:16px;font-size:12px;background:var(--success-light);border:1px solid #a0d8b8;color:var(--success);';
+      if (badge) badge.style.cssText = 'display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--radius);margin-bottom:16px;font-size:12px;background:rgb(255, 255, 255, 0);color:rgb(255, 255, 255);';
       if (setupBox) setupBox.style.display = 'none';
     })
     .catch(() => {
